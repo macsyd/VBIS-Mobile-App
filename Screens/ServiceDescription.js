@@ -53,6 +53,8 @@ function ServiceDescription({ navigation, route }) {
 
       <View style={styles.middleContainer}>
         <View>
+        <SafeAreaView>
+        <ScrollView style={styles.scrollViewtOtherResource}>
           {/* Heading*/}
           <Text
             style={[
@@ -62,8 +64,8 @@ function ServiceDescription({ navigation, route }) {
           >
             {Name}
           </Text>
-          <SafeAreaView>
-            <ScrollView style={styles.scrollViewServiceList}>
+          
+            
               <Text
                 style={[
                   mode == "light"

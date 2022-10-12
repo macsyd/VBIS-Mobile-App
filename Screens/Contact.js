@@ -11,16 +11,23 @@ import {
   Image,
 } from "react-native";
 import TopHeader from "../Components/TopHeader";
-
+//icon
 import { Ionicons } from "@expo/vector-icons";
+import { MaterialIcons } from '@expo/vector-icons'; 
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 //import MapView, { PROVIDER_GOOGLE } from 'react-native-maps'
+
+import MapView from 'react-native-maps';
 import { Marker } from "react-native-maps";
 import Footer from "../Components/Footer";
 import { styles } from "../style/styles";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { address, email, hours, phone } from "../Database/firebase.js";
-
+//email
+import sendemail from 'react-native-email'
+//map
+import {showLocation} from 'react-native-map-link';
 const VBISRegion = {
   latitude: 48.43251013505817,
   longitude: -123.36010116633796,
@@ -29,6 +36,29 @@ const VBISRegion = {
 };
 
 function Contact({ navigation }) {
+
+  
+  const mapLocation= () => {
+    
+
+    showLocation({
+      latitude: 48.43251013505817,
+      longitude: -123.36010116633796,
+      //sourceLatitude: 0.01,// optionally specify starting location for directions
+      //sourceLongitude: 0.01,// not optional if sourceLatitude is specified
+      title: 'VBIS', // optional
+      //googleForceLatLon: false, // optionally force GoogleMaps to use the latlon for the query instead of the title
+      alwaysIncludeGoogle: true, // optional, true will always add Google Maps to iOS and open in Safari, even if app is not installed (default: false)
+      dialogTitle: 'This is the dialog Title', // optional (default: 'Open in Maps')
+      dialogMessage: 'This is the amazing dialog Message', // optional (default: 'What app would you like to use?')
+      cancelText: 'This is the cancel button text', // optional (default: 'Cancel')
+      appsWhiteList: ['google-maps'], // optionally you can set which apps to show (default: will show all supported apps installed on device)
+      naverCallerName: 'com.example.myapp', // to link into Naver Map You should provide your appname which is the bundle ID in iOS and applicationId in android.
+      // appTitles: { 'google-maps': 'My custom Google Maps title' }, // optionally you can override default app titles
+      // app: 'uber',  // optionally specify specific app to use
+      //directionsMode: 'car', // optional, accepted values are 'car', 'walk', 'public-transport' or 'bike'
+    });
+  }
   // get the current theme & font size
 
   const theme = useSelector((state) => state.theme);
@@ -69,6 +99,17 @@ function Contact({ navigation }) {
     call(args).catch(console.error);
   };
 
+ const handleEmail = () => {
+    const to = ['admin@vbis.ca'] // string or array of email addresses
+    sendemail(to, {
+        // Optional additional arguments
+        cc: ['', ''], // string or array of email addresses
+        bcc: '', // string or array of email addresses
+        subject: 'Subject of Your Enquiry ',
+        body: '[Write Here]',
+        checkCanOpen: false // Call Linking.canOpenURL prior to Linking.openURL
+    }).catch(console.error)
+}
   return (
     <View
       style={
@@ -141,7 +182,7 @@ function Contact({ navigation }) {
                   : styles.callButton_dark
               }
             >
-              <Ionicons name="call" size={24} color="black" />
+              <Ionicons name="call" size={24} color={mode == "light" ? 'black' : 'white'} />
               <Text
                 style={
                   [mode == "light" ? styles.buttonText_light : styles.buttonText_dark, {fontSize: buttonSize}]
@@ -150,6 +191,50 @@ function Contact({ navigation }) {
                 Call Us
               </Text>
             </Pressable>
+
+            <Pressable
+              accessible={true}
+              accessibilityRole="button"
+              accessibilityLabel="Call VBIS"
+              accessibilityHint="Open Phone app to call the VBIS front desk"
+              onPress={handleEmail}
+              style={
+                mode == "light"
+                  ? styles.callButton_light
+                  : styles.callButton_dark
+              }
+            >
+             <MaterialIcons name="email" size={24} color={mode == "light" ? 'black' : 'white'} />
+              <Text
+                style={
+                  [mode == "light" ? styles.buttonText_light : styles.buttonText_dark, {fontSize: buttonSize}]
+                }
+              >
+                Send Us Email
+              </Text>
+            </Pressable>
+            <Pressable
+              accessible={true}
+              accessibilityRole="button"
+              accessibilityLabel="Call VBIS"
+              accessibilityHint="Open Phone app to call the VBIS front desk"
+              onPress={mapLocation}
+              style={
+                mode == "light"
+                  ? styles.callButton_light
+                  : styles.callButton_dark
+              }
+            >
+            <MaterialCommunityIcons name="map-marker-radius-outline" size={24}color={mode == "light" ? 'black' : 'white'} />
+              <Text
+                style={
+                  [mode == "light" ? styles.buttonText_light : styles.buttonText_dark, {fontSize: buttonSize}]
+                }
+              >
+                See Location on Map
+              </Text>
+            </Pressable>
+           
           </View>
         </View>
 
