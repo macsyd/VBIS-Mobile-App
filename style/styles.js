@@ -14,12 +14,12 @@ const { width, height } = Dimensions.get("window");
 
 export const styles = StyleSheet.create({
   appContainer_light: {
-    padding: 20,
+    padding: "2%",
     backgroundColor: "#ffffff",
     height: "100%",
   },
   appContainer_dark: {
-    padding: 20,
+    padding: "2%",
     backgroundColor: "black",
     height: "100%",
   },
@@ -130,8 +130,10 @@ export const styles = StyleSheet.create({
 
   middleContainer: {
     flexDirection: "column",
-    height: "70%",
+    height: "75%",
     justifyContent: "space-between",
+   
+    marginLeft: "2%"
   },
 
   heading_light: {
@@ -191,10 +193,11 @@ export const styles = StyleSheet.create({
 
   bottomContainer: {
     flexDirection: "row",
-    height: "16%",
-    backgroundColor: "",
+    height: "10%",
     alignItems: "center",
     justifyContent: "center",
+   
+    
   },
   bottomButton: {
     marginTop: 20,
@@ -213,7 +216,7 @@ export const styles = StyleSheet.create({
   },
 
   bottomButton_light: {
-    marginTop: 50,
+    marginTop: "1%",
     marginRight: 30,
     marginLeft: 30,
     flexDirection: "row",
@@ -604,10 +607,21 @@ export const styles = StyleSheet.create({
     fontWeight: "400",
     color: "white",
   },
+  scrollViewtOtherResource: {
+    height: "100%",
+  },
 
+  scrollViewServiceListOtherResources: {
+    height: "80%",
+    marginLeft: "3%"
+   
+  },
   /* Service List Page*/
 
   scrollViewServiceList: {
     height: height * 0.6,
+   
   },
+ 
+
 });
