@@ -69,7 +69,9 @@ function Service({ navigation, route }) {
             {Type}
           </Text>
           <SafeAreaView>
-            <ScrollView style={styles.scrollViewServiceList}>
+            <ScrollView
+              style={styles.scrollView}
+              contentContainerStyle={styles.scrollViewContentContainer}>
               {Service.map((item) => (
                 <View
                   key={item.name}

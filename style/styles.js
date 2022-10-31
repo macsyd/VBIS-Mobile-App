@@ -286,6 +286,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     height: "71.5%",
+    width: "100%",
     padding: 20,
   },
   homeRowContainer: {
@@ -293,7 +294,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     height: "35%",
-    marginLeft: 30,
+    marginLeft: 20,
   },
   homeContactContainer: {
     flexDirection: "row",
@@ -531,7 +532,9 @@ export const styles = StyleSheet.create({
 
   /*Programs Page*/
   scrollViewProgramPage: {
-    height: height * 0.6,
+    justifyContent: 'center',
+    alignItems: "center",
+    paddingBottom: 50
   },
   itemButton_light: {
     marginTop: 20,
@@ -590,7 +593,8 @@ export const styles = StyleSheet.create({
   /*Other Resources Page*/
 
   scrollViewOtherResourcePage: {
-    height: height * 0.6,
+    justifyContent: 'center',
+    alignItems: "center",
   },
 
   otherResourcesBodyText_light: {
@@ -616,12 +620,26 @@ export const styles = StyleSheet.create({
     marginLeft: "3%"
    
   },
+
+  /* VBIS Schedule */
+
   /* Service List Page*/
 
   scrollViewServiceList: {
-    height: height * 0.6,
-   
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingBottom: 50
   },
  
-
+  /* Scoll View */
+  scrollView: {
+    height: height * 0.6,
+    width: '100%',
+    alignSelf: 'center',
+  },
+  scrollViewContentContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingBottom: 50
+  },
 });

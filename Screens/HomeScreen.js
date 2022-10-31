@@ -71,9 +71,12 @@ function HomeScreen({ navigation }) {
         accessibilityHint="Type a word here to search for it in the app"
         style={styles.searchBar}
         placeholder="Search"
+        cancelButtonTitle='cancel'
         onChangeText={onChangeSearch}
         value={searchQuery}
+        autoCorrect={false}
       />
+      
 
       {/*Middle Container Where All the Home Button are*/}
 
