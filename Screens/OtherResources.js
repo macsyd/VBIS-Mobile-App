@@ -76,7 +76,9 @@ function OtherResources({ navigation }) {
             Other Resources
           </Text>
           <SafeAreaView>
-            <ScrollView style={styles.scrollViewOtherResourcePage}>
+            <ScrollView
+              style={styles.scrollView}
+              contentContainerStyle={styles.scrollViewOtherResourcePage}>
               {/* Description About Other Respurces*/}
 
               <Text

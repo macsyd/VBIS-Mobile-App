@@ -65,19 +65,19 @@ function Settings({ navigation }) {
     dispatch(
       changeSize(
         BUTTON_FONT_CHANGE,
-        fontSize.buttonSize + 5 <= 25 ? buttonSize + 5 : buttonSize
+        fontSize.buttonSize + 2 <= 25 ? buttonSize + 2 : buttonSize
       )
     );
     dispatch(
       changeSize(
         BODY_FONT_CHANGE,
-        fontSize.bodySize + 5 <= 30 ? bodySize + 5 : bodySize
+        fontSize.bodySize + 2 <= 24 ? bodySize + 2 : bodySize
       )
     );
     dispatch(
       changeSize(
         SUBTITLE_FONT_CHANGE,
-        fontSize.subtitleSize + 5 <= 35 ? subtitleSize + 5 : subtitleSize
+        fontSize.subtitleSize + 2 <= 35 ? subtitleSize + 2 : subtitleSize
       )
     );
   };
@@ -86,19 +86,19 @@ function Settings({ navigation }) {
     dispatch(
       changeSize(
         BUTTON_FONT_CHANGE,
-        fontSize.buttonSize - 5 >= 16 ? buttonSize - 5 : buttonSize
+        fontSize.buttonSize - 2 >= 16 ? buttonSize - 2 : buttonSize
       )
     );
     dispatch(
       changeSize(
         BODY_FONT_CHANGE,
-        fontSize.bodySize - 5 >= 19 ? bodySize - 5 : bodySize
+        fontSize.bodySize - 2 >= 16 ? bodySize - 2 : bodySize
       )
     );
     dispatch(
       changeSize(
         SUBTITLE_FONT_CHANGE,
-        fontSize.subtitleSize - 5 >= 29 ? subtitleSize - 5 : subtitleSize
+        fontSize.subtitleSize - 2 >= 29 ? subtitleSize - 2 : subtitleSize
       )
     );
   };

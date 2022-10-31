@@ -82,7 +82,9 @@ function Course({ navigation, route }) {
             {ID}{" "}
           </Text>
           <SafeAreaView>
-            <ScrollView style={styles.scrollViewServiceList}>
+            <ScrollView
+              style={styles.scrollView}
+              contentContainerStyle={styles.scrollViewServiceList}>
               <Text
                 style={[
                   mode == "light"

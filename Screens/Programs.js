@@ -66,7 +66,9 @@ function Programs({ navigation }) {
           </Text>
           {/* List of Programs*/}
           <SafeAreaView>
-            <ScrollView style={styles.scrollViewProgramPage}>
+            <ScrollView
+              style={styles.scrollView}
+              contentContainerStyle={styles.scrollViewProgramPage}>
               {programList.map((item) => (
                 <View
                   key={item.name}

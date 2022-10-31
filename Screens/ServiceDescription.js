@@ -54,7 +54,9 @@ function ServiceDescription({ navigation, route }) {
       <View style={styles.middleContainer}>
         <View>
         <SafeAreaView>
-        <ScrollView style={styles.scrollViewtOtherResource}>
+        <ScrollView
+          style={styles.scrollView}
+          contentContainerStyle={styles.scrollViewContentContainer}>
           {/* Heading*/}
           <Text
             style={[
