@@ -65,19 +65,19 @@ function Settings({ navigation }) {
     dispatch(
       changeSize(
         BUTTON_FONT_CHANGE,
-        fontSize.buttonSize + 2 <= 25 ? buttonSize + 2 : buttonSize
+        fontSize.buttonSize + 2 <= 26 ? buttonSize + 2 : buttonSize
       )
     );
     dispatch(
       changeSize(
         BODY_FONT_CHANGE,
-        fontSize.bodySize + 2 <= 24 ? bodySize + 2 : bodySize
+        fontSize.bodySize + 2 <= 25 ? bodySize + 2 : bodySize
       )
     );
     dispatch(
       changeSize(
         SUBTITLE_FONT_CHANGE,
-        fontSize.subtitleSize + 2 <= 35 ? subtitleSize + 2 : subtitleSize
+        fontSize.subtitleSize + 2 <= 36 ? subtitleSize + 2 : subtitleSize
       )
     );
   };
