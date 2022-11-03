@@ -95,7 +95,7 @@ export const styles = StyleSheet.create({
     marginTop: 50,
     marginRight: 10,
     marginBottom: 50,
-    width: 100,
+    width: 105,
     height: 50,
     alignItems: "center",
     justifyContent: "center",
@@ -109,7 +109,7 @@ export const styles = StyleSheet.create({
     marginTop: 50,
     marginRight: 10,
     marginBottom: 50,
-    width: 100,
+    width: 105,
     height: 50,
     alignItems: "center",
     justifyContent: "center",
@@ -220,8 +220,8 @@ export const styles = StyleSheet.create({
     marginRight: 30,
     marginLeft: 30,
     flexDirection: "row",
-    width: 110,
-    height: 58,
+    width: 120,
+    height: 62,
     borderRadius: 10,
     alignItems: "center",
     justifyContent: "center",
@@ -365,8 +365,8 @@ export const styles = StyleSheet.create({
 
   staffButton_light: {
     marginTop: 30,
-    marginRight: 30,
-    marginLeft: 10,
+    marginRight: 20,
+    marginLeft: 20,
     width: 310,
     height: 62,
     borderRadius: 10,
@@ -380,8 +380,8 @@ export const styles = StyleSheet.create({
 
   staffButton_dark: {
     marginTop: 30,
-    marginRight: 30,
-    marginLeft: 10,
+    marginRight: 20,
+    marginLeft: 20,
     width: 310,
     height: 62,
     borderRadius: 10,
@@ -640,6 +640,6 @@ export const styles = StyleSheet.create({
   scrollViewContentContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    paddingBottom: 50
+    paddingBottom: 50,
   },
 });

@@ -132,7 +132,7 @@ function VbisSchedule({ navigation }) {
         >
           VBIS Schedule
         </Text>
-        <Agenda
+        {/* <Agenda
           items={items}
           loadItemsForMonth={loadItems}
           // Initially selected day
@@ -142,7 +142,7 @@ function VbisSchedule({ navigation }) {
           // Maximum date that can be selected, dates after maxDate will be grayed out. Default = undefined
           maxDate={'2022-05-30'}
           renderDay={renderDay}
-        />
+        /> */}
       </View>
       {/* Footer of the page(Back Button, Home Button)*/}
       <View style={styles.bottomContainer}>

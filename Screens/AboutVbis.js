@@ -62,51 +62,54 @@ function AboutVbis({ navigation }) {
       </View>
 
       <View style={styles.middleContainer}>
-        <View>
-          {/* Heading*/}
-          <Text
-            style={
-              [mode == "light" ? styles.heading_light : styles.heading_dark, {fontSize: subtitleSize}]
-            }
-            accessibilityRole="header"
-          >
-            About VBIS
-          </Text>
-
-          {/* Description About VBIS*/}
-          <Text
-            style={
-              [mode == "light" ? styles.bodyText_light : styles.bodyText_dark, {fontSize: bodySize}]
-            }
-            accessibilityRole="text"
-          >
-            {about}
-          </Text>
-          {/* Staff Member VBIS Button*/}
+        <ScrollView
+          style={styles.scrollView}
+          contentContainerStyle={styles.scrollViewContentContainer}>
           <View>
-            <Pressable
-              accessible={true}
-              accessibilityRole="button"
-              accessibilityLabel="VBIS staff members"
-              accessibilityHint="See a description of staff positions at VBIS"
-              onPress={() => navigation.navigate("Staff")}
+            {/* Heading*/}
+            <Text
               style={
-                mode == "light"
-                  ? styles.staffButton_light
-                  : styles.staffButton_dark
+                [mode == "light" ? styles.heading_light : styles.heading_dark, {fontSize: subtitleSize}]
               }
+              accessibilityRole="header"
             >
-              <Text
+              About VBIS
+            </Text>
+
+            {/* Description About VBIS*/}
+            <Text
+              style={
+                [mode == "light" ? styles.bodyText_light : styles.bodyText_dark, {fontSize: bodySize}]
+              }
+              accessibilityRole="text"
+            >
+              {about}
+            </Text>
+            {/* Staff Member VBIS Button*/}
+            <View>
+              <Pressable
+                accessible={true}
+                accessibilityRole="button"
+                accessibilityLabel="VBIS staff members"
+                accessibilityHint="See a description of staff positions at VBIS"
+                onPress={() => navigation.navigate("Staff")}
                 style={
-                  [mode == "light" ? styles.buttonText_light : styles.buttonText_dark, {fontSize: buttonSize}]
+                  mode == "light"
+                    ? styles.staffButton_light
+                    : styles.staffButton_dark
                 }
               >
-                {" "}
-                Staff Members{" "}
-              </Text>
-            </Pressable>
+                <Text
+                  style={
+                    [mode == "light" ? styles.buttonText_light : styles.buttonText_dark, {fontSize: buttonSize}]
+                  }
+                >
+                  Staff Members
+                </Text>
+              </Pressable>
+            </View>
           </View>
-        </View>
+        </ScrollView>
       </View>
       {/* Footer of the page(Back Button, Home Button)*/}
       <View style={styles.bottomContainer}>
