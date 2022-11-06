@@ -120,7 +120,7 @@ export const styles = StyleSheet.create({
   },
   headerContainer: {
     flexDirection: "row",
-    height: "15%",
+    height: height*0.15,
     backgroundColor: "",
     alignItems: "center",
     justifyContent: "center",
@@ -130,7 +130,7 @@ export const styles = StyleSheet.create({
 
   middleContainer: {
     flexDirection: "column",
-    height: "75%",
+    height: height*0.7,
     justifyContent: "space-between",
    
     marginLeft: "2%"
@@ -193,14 +193,13 @@ export const styles = StyleSheet.create({
 
   bottomContainer: {
     flexDirection: "row",
-    height: "10%",
+    height: height*0.15,
     alignItems: "center",
     justifyContent: "center",
    
     
   },
   bottomButton: {
-    marginTop: 20,
     marginRight: 30,
     marginLeft: 30,
     flexDirection: "row",
@@ -231,7 +230,7 @@ export const styles = StyleSheet.create({
     borderRadius: 7.5,
   },
   bottomButton_dark: {
-    marginTop: 50,
+    marginTop: "1%",
     marginRight: 30,
     marginLeft: 30,
     flexDirection: "row",
@@ -528,6 +527,14 @@ export const styles = StyleSheet.create({
     textAlign: "left",
     padding: 4,
     color: "white",
+  },
+  contactPageScrollView: {
+    height: height * 0.6,
+    width: '100%',
+    alignSelf: 'center',
+  },
+  contactPageScrollViewContentContainer: {
+    paddingBottom: 50,
   },
 
   /*Programs Page*/

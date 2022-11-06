@@ -133,109 +133,113 @@ function Contact({ navigation }) {
             Contact
           </Text>
           {/* Contact Description */}
-          <Text
-            style={
-              [mode == "light" ? styles.bodyTextContact_light : styles.bodyTextContact_dark, {fontSize: bodySize}]
-            }
-            accessibilityRole="text"
-          >
-            <Text style={{ fontWeight: "bold" }}> Location:</Text>
-            <Text> {address}</Text>
-          </Text>
-          <Text
-            style={
-              [mode == "light" ? styles.bodyTextContact_light : styles.bodyTextContact_dark, {fontSize: bodySize}]
-            }
-            accessibilityRole="text"
-          >
-            <Text style={{ fontWeight: "bold" }}> Working Hours:</Text>
-            <Text> {hours} </Text>
-          </Text>
-          <Text
-            style={
-              [mode == "light" ? styles.bodyTextContact_light : styles.bodyTextContact_dark, {fontSize: bodySize}]
-            }
-            accessibilityRole="text"
-          >
-            <Text style={{ fontWeight: "bold" }}> Phone:</Text>
-            <Text> {phone}</Text>
-          </Text>
-          <Text
-            style={
-              [mode == "light" ? styles.bodyTextContact_light : styles.bodyTextContact_dark, {fontSize: bodySize}]
-            }
-            accessibilityRole="text"
-          >
-            <Text style={{ fontWeight: "bold" }}> Email:</Text>
-            <Text> {email}</Text>
-          </Text>
-          <View>
-            <Pressable
-              accessible={true}
-              accessibilityRole="button"
-              accessibilityLabel="Call VBIS"
-              accessibilityHint="Open Phone app to call the VBIS front desk"
-              onPress={triggerCall}
+          <ScrollView
+          style={styles.contactPageScrollView}
+          contentContainerStyle={styles.contactPageScrollViewContentContainer}>
+            <Text
               style={
-                mode == "light"
-                  ? styles.callButton_light
-                  : styles.callButton_dark
+                [mode == "light" ? styles.bodyTextContact_light : styles.bodyTextContact_dark, {fontSize: bodySize}]
               }
+              accessibilityRole="text"
             >
-              <Ionicons name="call" size={24} color={mode == "light" ? 'black' : 'white'} />
-              <Text
+              <Text style={{ fontWeight: "bold" }}> Location:</Text>
+              <Text> {address}</Text>
+            </Text>
+            <Text
+              style={
+                [mode == "light" ? styles.bodyTextContact_light : styles.bodyTextContact_dark, {fontSize: bodySize}]
+              }
+              accessibilityRole="text"
+            >
+              <Text style={{ fontWeight: "bold" }}> Working Hours:</Text>
+              <Text> {hours} </Text>
+            </Text>
+            <Text
+              style={
+                [mode == "light" ? styles.bodyTextContact_light : styles.bodyTextContact_dark, {fontSize: bodySize}]
+              }
+              accessibilityRole="text"
+            >
+              <Text style={{ fontWeight: "bold" }}> Phone:</Text>
+              <Text> {phone}</Text>
+            </Text>
+            <Text
+              style={
+                [mode == "light" ? styles.bodyTextContact_light : styles.bodyTextContact_dark, {fontSize: bodySize}]
+              }
+              accessibilityRole="text"
+            >
+              <Text style={{ fontWeight: "bold" }}> Email:</Text>
+              <Text> {email}</Text>
+            </Text>
+            <View>
+              <Pressable
+                accessible={true}
+                accessibilityRole="button"
+                accessibilityLabel="Call VBIS"
+                accessibilityHint="Open Phone app to call the VBIS front desk"
+                onPress={triggerCall}
                 style={
-                  [mode == "light" ? styles.buttonText_light : styles.buttonText_dark, {fontSize: buttonSize}]
+                  mode == "light"
+                    ? styles.callButton_light
+                    : styles.callButton_dark
                 }
               >
-                Call Us
-              </Text>
-            </Pressable>
+                <Ionicons name="call" size={24} color={mode == "light" ? 'black' : 'white'} />
+                <Text
+                  style={
+                    [mode == "light" ? styles.buttonText_light : styles.buttonText_dark, {fontSize: buttonSize}]
+                  }
+                >
+                  Call Us
+                </Text>
+              </Pressable>
 
-            <Pressable
-              accessible={true}
-              accessibilityRole="button"
-              accessibilityLabel="Call VBIS"
-              accessibilityHint="Open Phone app to call the VBIS front desk"
-              onPress={handleEmail}
-              style={
-                mode == "light"
-                  ? styles.callButton_light
-                  : styles.callButton_dark
-              }
-            >
-             <MaterialIcons name="email" size={24} color={mode == "light" ? 'black' : 'white'} />
-              <Text
+              <Pressable
+                accessible={true}
+                accessibilityRole="button"
+                accessibilityLabel="Call VBIS"
+                accessibilityHint="Open Phone app to call the VBIS front desk"
+                onPress={handleEmail}
                 style={
-                  [mode == "light" ? styles.buttonText_light : styles.buttonText_dark, {fontSize: buttonSize}]
+                  mode == "light"
+                    ? styles.callButton_light
+                    : styles.callButton_dark
                 }
               >
-                Send Us Email
-              </Text>
-            </Pressable>
-            <Pressable
-              accessible={true}
-              accessibilityRole="button"
-              accessibilityLabel="Call VBIS"
-              accessibilityHint="Open Phone app to call the VBIS front desk"
-              onPress={mapLocation}
-              style={
-                mode == "light"
-                  ? styles.callButton_light
-                  : styles.callButton_dark
-              }
-            >
-            <MaterialCommunityIcons name="map-marker-radius-outline" size={24}color={mode == "light" ? 'black' : 'white'} />
-              <Text
+              <MaterialIcons name="email" size={24} color={mode == "light" ? 'black' : 'white'} />
+                <Text
+                  style={
+                    [mode == "light" ? styles.buttonText_light : styles.buttonText_dark, {fontSize: buttonSize}]
+                  }
+                >
+                  Send Us Email
+                </Text>
+              </Pressable>
+              <Pressable
+                accessible={true}
+                accessibilityRole="button"
+                accessibilityLabel="Call VBIS"
+                accessibilityHint="Open Phone app to call the VBIS front desk"
+                onPress={mapLocation}
                 style={
-                  [mode == "light" ? styles.buttonText_light : styles.buttonText_dark, {fontSize: buttonSize}]
+                  mode == "light"
+                    ? styles.callButton_light
+                    : styles.callButton_dark
                 }
               >
-                See Location on Map
-              </Text>
-            </Pressable>
-           
-          </View>
+              <MaterialCommunityIcons name="map-marker-radius-outline" size={24}color={mode == "light" ? 'black' : 'white'} />
+                <Text
+                  style={
+                    [mode == "light" ? styles.buttonText_light : styles.buttonText_dark, {fontSize: buttonSize}]
+                  }
+                >
+                  See Location on Map
+                </Text>
+              </Pressable>
+            
+            </View>
+          </ScrollView>
         </View>
 
         {/* <View style={styles.container}>
