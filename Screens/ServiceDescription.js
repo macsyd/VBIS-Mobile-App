@@ -52,91 +52,87 @@ function ServiceDescription({ navigation, route }) {
       </View>
 
       <View style={styles.middleContainer}>
-        <View>
+        {/* Heading*/}
+        <Text
+          style={[
+            mode == "light" ? styles.heading_light : styles.heading_dark,
+            { fontSize: subtitleSize },
+          ]}
+        >
+          {Name}
+        </Text>
         <SafeAreaView>
-        <ScrollView
-          style={styles.scrollView}
-          contentContainerStyle={styles.scrollViewContentContainer}>
-          {/* Heading*/}
-          <Text
-            style={[
-              mode == "light" ? styles.heading_light : styles.heading_dark,
-              { fontSize: subtitleSize },
-            ]}
-          >
-            {Name}
-          </Text>
-          
-            
-              <Text
-                style={[
-                  mode == "light"
-                    ? styles.subtitle_light
-                    : styles.subtitle_dark,
-                  { fontSize: subtitleSize },
-                ]}
-              >
-                Description
-              </Text>
+          <ScrollView
+            style={styles.scrollView}
+            contentContainerStyle={styles.scrollViewContentContainer}>            
+            <Text
+              style={[
+                mode == "light"
+                  ? styles.subtitle_light
+                  : styles.subtitle_dark,
+                { fontSize: subtitleSize },
+              ]}
+            >
+              Description
+            </Text>
 
-              <Text
-                style={[
-                  mode == "light"
-                    ? styles.bodyTextCoursePage_light
-                    : styles.bodyTextCoursePage_dark,
-                  { fontSize: bodySize },
-                ]}
-              >
-                {" "}
-                {Description}
-              </Text>
+            <Text
+              style={[
+                mode == "light"
+                  ? styles.bodyTextCoursePage_light
+                  : styles.bodyTextCoursePage_dark,
+                { fontSize: bodySize },
+              ]}
+            >
+              {" "}
+              {Description}
+            </Text>
 
-              <Text
-                style={[
-                  mode == "light"
-                    ? styles.subtitle_light
-                    : styles.subtitle_dark,
-                  { fontSize: subtitleSize },
-                ]}
-              >
-                {" "}
-                Location
-              </Text>
-              <Text
-                style={[
-                  mode == "light"
-                    ? styles.bodyTextCoursePage_light
-                    : styles.bodyTextCoursePage_dark,
-                  { fontSize: bodySize },
-                ]}
-              >
-                {Location}
-              </Text>
+            <Text
+              style={[
+                mode == "light"
+                  ? styles.subtitle_light
+                  : styles.subtitle_dark,
+                { fontSize: subtitleSize },
+              ]}
+            >
+              {" "}
+              Location
+            </Text>
+            <Text
+              style={[
+                mode == "light"
+                  ? styles.bodyTextCoursePage_light
+                  : styles.bodyTextCoursePage_dark,
+                { fontSize: bodySize },
+              ]}
+            >
+              {Location}
+            </Text>
 
-              <Text
-                style={[
-                  mode == "light"
-                    ? styles.subtitle_light
-                    : styles.subtitle_dark,
-                  { fontSize: subtitleSize },
-                ]}
-              >
-                {" "}
-                Phone
-              </Text>
-              <Text
-                style={[
-                  mode == "light"
-                    ? styles.bodyTextCoursePage_light
-                    : styles.bodyTextCoursePage_dark,
-                  { fontSize: bodySize },
-                ]}
-              >
-                {Phone}
-              </Text>
-            </ScrollView>
-          </SafeAreaView>
-        </View>
+            <Text
+              style={[
+                mode == "light"
+                  ? styles.subtitle_light
+                  : styles.subtitle_dark,
+                { fontSize: subtitleSize },
+              ]}
+            >
+              {" "}
+              Phone
+            </Text>
+            <Text
+              style={[
+                mode == "light"
+                  ? styles.bodyTextCoursePage_light
+                  : styles.bodyTextCoursePage_dark,
+                { fontSize: bodySize },
+              ]}
+            >
+              {Phone}
+            </Text>
+          </ScrollView>
+        </SafeAreaView>
       </View>
       {/* Footer of the page(Back Button, Home Button)*/}
       <View style={styles.bottomContainer}>

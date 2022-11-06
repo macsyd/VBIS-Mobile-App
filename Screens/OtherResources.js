@@ -90,6 +90,7 @@ function OtherResources({ navigation }) {
                 ]}
                 accessibilityRole="text"
               >
+                {" "}
                 {resourceDescription}
               </Text>
 
