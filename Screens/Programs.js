@@ -68,7 +68,7 @@ function Programs({ navigation }) {
           <SafeAreaView>
             <ScrollView
               style={styles.scrollView}
-              contentContainerStyle={styles.scrollViewProgramPage}>
+              contentContainerStyle={styles.scrollViewProgramPageContainer}>
               {programList.map((item) => (
                 <View
                   key={item.name}

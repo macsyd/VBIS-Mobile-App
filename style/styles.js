@@ -529,7 +529,7 @@ export const styles = StyleSheet.create({
     color: "white",
   },
   contactPageScrollView: {
-    height: height * 0.6,
+    height: height * 0.55,
     width: '100%',
     alignSelf: 'center',
   },
@@ -538,7 +538,7 @@ export const styles = StyleSheet.create({
   },
 
   /*Programs Page*/
-  scrollViewProgramPage: {
+  scrollViewProgramPageContainer: {
     justifyContent: 'center',
     alignItems: "center",
     paddingBottom: 50
@@ -599,7 +599,7 @@ export const styles = StyleSheet.create({
 
   /*Other Resources Page*/
 
-  scrollViewOtherResourcePage: {
+  scrollViewOtherResourcePageContainer: {
     justifyContent: 'center',
     alignItems: "center",
   },
@@ -618,15 +618,6 @@ export const styles = StyleSheet.create({
     fontWeight: "400",
     color: "white",
   },
-  scrollViewtOtherResource: {
-    height: "100%",
-  },
-
-  scrollViewServiceListOtherResources: {
-    height: "80%",
-    marginLeft: "3%"
-   
-  },
 
   /* VBIS Schedule */
 
@@ -640,7 +631,7 @@ export const styles = StyleSheet.create({
  
   /* Scoll View */
   scrollView: {
-    height: height * 0.6,
+    height: height * 0.55,
     width: '100%',
     alignSelf: 'center',
   },
