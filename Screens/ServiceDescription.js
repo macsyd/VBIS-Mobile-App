@@ -38,24 +38,36 @@ function ServiceDescription({ navigation, route }) {
     setMode(theme.mode);
   }, [theme]);
 
+  useEffect(() => {
+    setButtonSize(fontSize.buttonSize);
+  }, [fontSize]);
+
+  useEffect(() => {
+    setSubtitleSize(fontSize.subtitleSize);
+  }, [fontSize]);
+
+  useEffect(() => {
+    setBodySize(fontSize.bodySize);
+  }, [fontSize]);
+
   const { Name, Description, Location, Phone } = route.params;
 
   return (
     <View
       style={
-        mode == "light" ? styles.appContainer_light : styles.appContainer_dark
+        mode == "light" ? styles(bodySize).appContainer_light : styles(bodySize).appContainer_dark
       }
     >
       {/* Top Header(VBIS logo, Settings, Tuitorial)*/}
-      <View style={styles.headerContainer}>
+      <View style={styles(bodySize).headerContainer}>
         <TopHeader navigation={navigation} />
       </View>
 
-      <View style={styles.middleContainer}>
+      <View style={styles(bodySize).middleContainer}>
         {/* Heading*/}
         <Text
           style={[
-            mode == "light" ? styles.heading_light : styles.heading_dark,
+            mode == "light" ? styles(bodySize).heading_light : styles(bodySize).heading_dark,
             { fontSize: subtitleSize },
           ]}
         >
@@ -63,13 +75,13 @@ function ServiceDescription({ navigation, route }) {
         </Text>
         <SafeAreaView>
           <ScrollView
-            style={styles.scrollView}
-            contentContainerStyle={styles.scrollViewContentContainer}>            
+            style={styles(bodySize).scrollView}
+            contentContainerStyle={styles(bodySize).scrollViewContentContainer}>            
             <Text
               style={[
                 mode == "light"
-                  ? styles.subtitle_light
-                  : styles.subtitle_dark,
+                  ? styles(bodySize).subtitle_light
+                  : styles(bodySize).subtitle_dark,
                 { fontSize: subtitleSize },
               ]}
             >
@@ -79,8 +91,8 @@ function ServiceDescription({ navigation, route }) {
             <Text
               style={[
                 mode == "light"
-                  ? styles.bodyTextCoursePage_light
-                  : styles.bodyTextCoursePage_dark,
+                  ? styles(bodySize).bodyTextCoursePage_light
+                  : styles(bodySize).bodyTextCoursePage_dark,
                 { fontSize: bodySize },
               ]}
             >
@@ -91,8 +103,8 @@ function ServiceDescription({ navigation, route }) {
             <Text
               style={[
                 mode == "light"
-                  ? styles.subtitle_light
-                  : styles.subtitle_dark,
+                  ? styles(bodySize).subtitle_light
+                  : styles(bodySize).subtitle_dark,
                 { fontSize: subtitleSize },
               ]}
             >
@@ -102,8 +114,8 @@ function ServiceDescription({ navigation, route }) {
             <Text
               style={[
                 mode == "light"
-                  ? styles.bodyTextCoursePage_light
-                  : styles.bodyTextCoursePage_dark,
+                  ? styles(bodySize).bodyTextCoursePage_light
+                  : styles(bodySize).bodyTextCoursePage_dark,
                 { fontSize: bodySize },
               ]}
             >
@@ -113,8 +125,8 @@ function ServiceDescription({ navigation, route }) {
             <Text
               style={[
                 mode == "light"
-                  ? styles.subtitle_light
-                  : styles.subtitle_dark,
+                  ? styles(bodySize).subtitle_light
+                  : styles(bodySize).subtitle_dark,
                 { fontSize: subtitleSize },
               ]}
             >
@@ -124,8 +136,8 @@ function ServiceDescription({ navigation, route }) {
             <Text
               style={[
                 mode == "light"
-                  ? styles.bodyTextCoursePage_light
-                  : styles.bodyTextCoursePage_dark,
+                  ? styles(bodySize).bodyTextCoursePage_light
+                  : styles(bodySize).bodyTextCoursePage_dark,
                 { fontSize: bodySize },
               ]}
             >
@@ -135,7 +147,7 @@ function ServiceDescription({ navigation, route }) {
         </SafeAreaView>
       </View>
       {/* Footer of the page(Back Button, Home Button)*/}
-      <View style={styles.bottomContainer}>
+      <View style={styles(bodySize).bottomContainer}>
         <Footer navigation={navigation} />
       </View>
     </View>

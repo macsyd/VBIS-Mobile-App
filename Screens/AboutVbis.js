@@ -21,7 +21,6 @@ import { about } from "../Database/firebase.js";
 
 function AboutVbis({ navigation }) {
   // get the current theme & font size
-
   const theme = useSelector((state) => state.theme);
   const fontSize = useSelector((state) => state.fontSize);
   // initialize action dispatcher
@@ -53,23 +52,23 @@ function AboutVbis({ navigation }) {
   return (
     <View
       style={
-        mode == "light" ? styles.appContainer_light : styles.appContainer_dark
+        mode == "light" ? styles(bodySize).appContainer_light : styles(bodySize).appContainer_dark
       }
     >
       {/* Top Header(VBIS logo, Settings, Tuitorial)*/}
-      <View style={styles.headerContainer}>
+      <View style={styles(bodySize).headerContainer}>
         <TopHeader navigation={navigation} />
       </View>
 
-      <View style={styles.middleContainer}>
+      <View style={styles(bodySize).middleContainer}>
         <ScrollView
-          style={styles.scrollView}
-          contentContainerStyle={styles.scrollViewContentContainer}>
+          style={styles(bodySize).scrollView}
+          contentContainerStyle={styles(bodySize).scrollViewContentContainer}>
           <View>
             {/* Heading*/}
             <Text
               style={
-                [mode == "light" ? styles.heading_light : styles.heading_dark, {fontSize: subtitleSize}]
+                [mode == "light" ? styles(bodySize).heading_light : styles(bodySize).heading_dark, {fontSize: subtitleSize}]
               }
               accessibilityRole="header"
             >
@@ -79,7 +78,7 @@ function AboutVbis({ navigation }) {
             {/* Description About VBIS*/}
             <Text
               style={
-                [mode == "light" ? styles.bodyText_light : styles.bodyText_dark, {fontSize: bodySize}]
+                [mode == "light" ? styles(bodySize).bodyText_light : styles(bodySize).bodyText_dark, {fontSize: bodySize}]
               }
               accessibilityRole="text"
             >
@@ -95,13 +94,13 @@ function AboutVbis({ navigation }) {
                 onPress={() => navigation.navigate("Staff")}
                 style={
                   mode == "light"
-                    ? styles.staffButton_light
-                    : styles.staffButton_dark
+                    ? styles(bodySize).staffButton_light
+                    : styles(bodySize).staffButton_dark
                 }
               >
                 <Text
                   style={
-                    [mode == "light" ? styles.buttonText_light : styles.buttonText_dark, {fontSize: buttonSize}]
+                    [mode == "light" ? styles(bodySize).buttonText_light : styles(bodySize).buttonText_dark, {fontSize: buttonSize}]
                   }
                 >
                   Staff Members
@@ -112,7 +111,7 @@ function AboutVbis({ navigation }) {
         </ScrollView>
       </View>
       {/* Footer of the page(Back Button, Home Button)*/}
-      <View style={styles.bottomContainer}>
+      <View style={styles(bodySize).bottomContainer}>
         <Footer navigation={navigation} />
       </View>
     </View>

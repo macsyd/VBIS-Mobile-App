@@ -65,13 +65,13 @@ function Settings({ navigation }) {
     dispatch(
       changeSize(
         BUTTON_FONT_CHANGE,
-        fontSize.buttonSize + 2 <= 26 ? buttonSize + 2 : buttonSize
+        fontSize.buttonSize + 2 <= 27 ? buttonSize + 2 : buttonSize
       )
     );
     dispatch(
       changeSize(
         BODY_FONT_CHANGE,
-        fontSize.bodySize + 2 <= 25 ? bodySize + 2 : bodySize
+        fontSize.bodySize + 2 <= 26 ? bodySize + 2 : bodySize
       )
     );
     dispatch(
@@ -86,7 +86,7 @@ function Settings({ navigation }) {
     dispatch(
       changeSize(
         BUTTON_FONT_CHANGE,
-        fontSize.buttonSize - 2 >= 16 ? buttonSize - 2 : buttonSize
+        fontSize.buttonSize - 2 >= 17 ? buttonSize - 2 : buttonSize
       )
     );
     dispatch(
@@ -98,7 +98,7 @@ function Settings({ navigation }) {
     dispatch(
       changeSize(
         SUBTITLE_FONT_CHANGE,
-        fontSize.subtitleSize - 2 >= 29 ? subtitleSize - 2 : subtitleSize
+        fontSize.subtitleSize - 2 >= 28 ? subtitleSize - 2 : subtitleSize
       )
     );
   };
@@ -148,20 +148,20 @@ function Settings({ navigation }) {
   return (
     <View
       style={
-        mode == "light" ? styles.appContainer_light : styles.appContainer_dark
+        mode == "light" ? styles(bodySize).appContainer_light : styles(bodySize).appContainer_dark
       }
     >
       {/* Top Header(VBIS logo, Settings, Tuitorial)*/}
-      <View style={styles.headerContainer}>
+      <View style={styles(bodySize).headerContainer}>
         <TopHeader navigation={navigation} />
       </View>
 
-      <View style={styles.middleContainer}>
+      <View style={styles(bodySize).middleContainer}>
         <View>
           {/* Heading*/}
           <Text
             style={[
-              mode == "light" ? styles.heading_light : styles.heading_dark,
+              mode == "light" ? styles(bodySize).heading_light : styles(bodySize).heading_dark,
               { fontSize: subtitleSize },
             ]}
             accessibilityRole="header"
@@ -169,17 +169,17 @@ function Settings({ navigation }) {
             Settings
           </Text>
 
-          <View style={styles.themeChange}>
+          <View style={styles(bodySize).themeChange}>
             <Text
               style={[
-                mode == "light" ? styles.bodyText_light : styles.bodyText_dark,
+                mode == "light" ? styles(bodySize).bodyText_light : styles(bodySize).bodyText_dark,
                 { fontSize: bodySize },
               ]}
             >
               You are on {theme.mode} mode!
             </Text>
 
-            <View style={styles.photoThemeChange}>
+            <View style={styles(bodySize).photoThemeChange}>
               <Image
                 style={{ width: 100, height: 150, marginLeft: 70 }}
                 source={require("../assets/Theme_Preview_Light_Grey.png")}
@@ -197,7 +197,7 @@ function Settings({ navigation }) {
               layout="row"
             />
           </View>
-          <View style={styles.fontSizeChangeContainer}>
+          <View style={styles(bodySize).fontSizeChangeContainer}>
             <Pressable
               accessible={true}
               accessibilityRole="button"
@@ -205,8 +205,8 @@ function Settings({ navigation }) {
               accessibilityHint="Increase font size"
               style={
                 mode == "light"
-                  ? styles.font_size_setting_light
-                  : styles.font_size_setting_dark
+                  ? styles(bodySize).font_size_setting_light
+                  : styles(bodySize).font_size_setting_dark
               }
               onPress={handleFontSizeIncrease}
             >
@@ -221,7 +221,7 @@ function Settings({ navigation }) {
             </Pressable>
             <Text
               style={[
-                mode == "light" ? styles.bodyText_light : styles.bodyText_dark,
+                mode == "light" ? styles(bodySize).bodyText_light : styles(bodySize).bodyText_dark,
                 { fontSize: bodySize },
               ]}
             >
@@ -234,8 +234,8 @@ function Settings({ navigation }) {
               accessibilityHint="Decrease font size"
               style={
                 mode == "light"
-                  ? styles.font_size_setting_light
-                  : styles.font_size_setting_dark
+                  ? styles(bodySize).font_size_setting_light
+                  : styles(bodySize).font_size_setting_dark
               }
               onPress={handleFontSizeDecrease}
             >
@@ -252,7 +252,7 @@ function Settings({ navigation }) {
         </View>
       </View>
       {/* Footer of the page(Back Button, Home Button)*/}
-      <View style={styles.bottomContainer}>
+      <View style={styles(bodySize).bottomContainer}>
         <Footer navigation={navigation} />
       </View>
     </View>

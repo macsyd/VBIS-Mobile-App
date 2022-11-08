@@ -26,6 +26,7 @@ function TopHeader({ navigation }) {
   // define a component mode state
   const [mode, setMode] = useState(theme.mode);
   const [buttonSize, setButtonSize] = useState(fontSize.buttonSize);
+  const [bodySize, setBodySize] = useState(fontSize.bodySize);
 
   // Update the app Incase the theme mode changes / font size changes
   useEffect(() => {
@@ -36,9 +37,13 @@ function TopHeader({ navigation }) {
     setButtonSize(fontSize.buttonSize);
   }, [fontSize]);
 
+  useEffect(() => {
+    setBodySize(fontSize.bodySize);
+  }, [fontSize]);
+
   return (
-    <View style={styles.headerContainer}>
-      <View style={styles.logo}>
+    <View style={styles(bodySize).headerContainer}>
+      <View style={styles(bodySize).logo}>
         <Image
           accessible={true}
           accessibilityRole="image"
@@ -57,7 +62,7 @@ function TopHeader({ navigation }) {
         accessibilityRole="button"
         accessibilityLabel="Settings"
         accessibilityHint="Go to the settings page"
-        style={mode == "light" ? styles.setting_light : styles.setting_dark}
+        style={mode == "light" ? styles(bodySize).setting_light : styles(bodySize).setting_dark}
         onPress={() => navigation.navigate("Settings")}
       >
         <Image
@@ -75,13 +80,13 @@ function TopHeader({ navigation }) {
         accessibilityRole="button"
         accessibilityLabel="Tutorial"
         accessibilityHint="Go to the tutorial page"
-        style={mode == "light" ? styles.tutorial_light : styles.tutorial_dark}
+        style={mode == "light" ? styles(bodySize).tutorial_light : styles(bodySize).tutorial_dark}
         color="#f194ff"
         onPress={() => navigation.navigate("Tutorial")}
       >
         <Text
           style={
-            [mode == "light" ? styles.buttonText_light : styles.buttonText_dark, {fontSize: buttonSize}]
+            [mode == "light" ? styles(bodySize).buttonText_light : styles(bodySize).buttonText_dark, {fontSize: buttonSize}]
           }
         >
           Tutorial

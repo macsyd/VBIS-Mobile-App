@@ -49,20 +49,20 @@ function Service({ navigation, route }) {
   return (
     <View
       style={
-        mode == "light" ? styles.appContainer_light : styles.appContainer_dark
+        mode == "light" ? styles(bodySize).appContainer_light : styles(bodySize).appContainer_dark
       }
     >
       {/* Top Header(VBIS logo, Settings, Tuitorial)*/}
-      <View style={styles.headerContainer}>
+      <View style={styles(bodySize).headerContainer}>
         <TopHeader navigation={navigation} />
       </View>
 
-      <View style={styles.middleContainer}>
+      <View style={styles(bodySize).middleContainer}>
         <View>
           {/* Heading*/}
           <Text
             style={[
-              mode == "light" ? styles.heading_light : styles.heading_dark,
+              mode == "light" ? styles(bodySize).heading_light : styles(bodySize).heading_dark,
               { fontSize: subtitleSize },
             ]}
           >
@@ -70,8 +70,8 @@ function Service({ navigation, route }) {
           </Text>
           <SafeAreaView>
             <ScrollView
-              style={styles.scrollView}
-              contentContainerStyle={styles.scrollViewContentContainer}>
+              style={styles(bodySize).scrollView}
+              contentContainerStyle={styles(bodySize).scrollViewContentContainer}>
               {Service.map((item) => (
                 <View
                   key={item.name}
@@ -83,8 +83,8 @@ function Service({ navigation, route }) {
                   <Pressable
                     style={
                       mode == "light"
-                        ? styles.itemButton_light
-                        : styles.itemButton_dark
+                        ? styles(bodySize).itemButton_light
+                        : styles(bodySize).itemButton_dark
                     }
                     onPress={() =>
                       navigation.navigate("ServiceDescription", {
@@ -98,8 +98,8 @@ function Service({ navigation, route }) {
                     <Text
                       style={[
                         mode == "light"
-                          ? styles.buttonText_light
-                          : styles.buttonText_dark,
+                          ? styles(item.name.length).buttonText_light
+                          : styles(bodySize).buttonText_dark,
                         { fontSize: buttonSize },
                       ]}
                     >
@@ -113,7 +113,7 @@ function Service({ navigation, route }) {
         </View>
       </View>
       {/* Footer of the page(Back Button, Home Button)*/}
-      <View style={styles.bottomContainer}>
+      <View style={styles(bodySize).bottomContainer}>
         <Footer navigation={navigation} />
       </View>
     </View>

@@ -29,7 +29,8 @@ function Programs({ navigation }) {
   const [mode, setMode] = useState(theme.mode);
   const [buttonSize, setButtonSize] = useState(fontSize.buttonSize);
   const [subtitleSize, setSubtitleSize] = useState(fontSize.subtitleSize);
-
+  const [bodySize, setBodySize] = useState(fontSize.bodySize);
+  
   // Update the app Incase the theme mode changes / font size changes
   useEffect(() => {
     setMode(theme.mode);
@@ -40,25 +41,29 @@ function Programs({ navigation }) {
   }, [fontSize]);
 
   useEffect(() => {
+    setBodySize(fontSize.bodySize);
+  }, [fontSize]);
+
+  useEffect(() => {
     setSubtitleSize(fontSize.subtitleSize);
   }, [fontSize]);
 
   return (
     <View
       style={
-        mode == "light" ? styles.appContainer_light : styles.appContainer_dark
+        mode == "light" ? styles(bodySize).appContainer_light : styles(bodySize).appContainer_dark
       }
     >
       {/* Top Header(VBIS logo, Settings, Tuitorial)*/}
-      <View style={styles.headerContainer}>
+      <View style={styles(bodySize).headerContainer}>
         <TopHeader navigation={navigation} />
       </View>
-      <View style={styles.middleContainer}>
+      <View style={styles(bodySize).middleContainer}>
         <View>
           {/* Heading*/}
           <Text
             style={
-              [mode == "light" ? styles.heading_light : styles.heading_dark, {fontSize: subtitleSize}]
+              [mode == "light" ? styles(bodySize).heading_light : styles(bodySize).heading_dark, {fontSize: subtitleSize}]
             }
           >
             {" "}
@@ -67,8 +72,8 @@ function Programs({ navigation }) {
           {/* List of Programs*/}
           <SafeAreaView>
             <ScrollView
-              style={styles.scrollView}
-              contentContainerStyle={styles.scrollViewProgramPageContainer}>
+              style={styles(bodySize).scrollView}
+              contentContainerStyle={styles(bodySize).scrollViewProgramPageContainer}>
               {programList.map((item) => (
                 <View
                   key={item.name}
@@ -80,8 +85,8 @@ function Programs({ navigation }) {
                   <Pressable
                     style={
                       mode == "light"
-                        ? styles.itemButton_light
-                        : styles.itemButton_dark
+                        ? styles(bodySize).itemButton_light
+                        : styles(bodySize).itemButton_dark
                     }
                     onPress={() =>
                       navigation.navigate("COURSE", {
@@ -101,7 +106,7 @@ function Programs({ navigation }) {
                   >
                     <Text
                       style={
-                        [mode == "light" ? styles.buttonText_light : styles.buttonText_dark, {fontSize: buttonSize}]
+                        [mode == "light" ? styles(bodySize).buttonText_light : styles(bodySize).buttonText_dark, {fontSize: buttonSize}]
                       }
                     >
                       {item.name}
@@ -114,7 +119,7 @@ function Programs({ navigation }) {
         </View>
       </View>
       {/* Footer of the page(Back Button, Home Button)*/}
-      <View style={styles.bottomContainer}>
+      <View style={styles(bodySize).bottomContainer}>
         <Footer navigation={navigation} />
       </View>
     </View>

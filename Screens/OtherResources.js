@@ -57,19 +57,19 @@ function OtherResources({ navigation }) {
   return (
     <View
       style={
-        mode == "light" ? styles.appContainer_light : styles.appContainer_dark
+        mode == "light" ? styles(bodySize).appContainer_light : styles(bodySize).appContainer_dark
       }
     >
-      <View style={styles.headerContainer}>
+      <View style={styles(bodySize).headerContainer}>
         <TopHeader navigation={navigation} />
       </View>
 
-      <View style={styles.middleContainer}>
+      <View style={styles(bodySize).middleContainer}>
         <View>
           {/* Heading*/}
           <Text
             style={[
-              mode == "light" ? styles.heading_light : styles.heading_dark,
+              mode == "light" ? styles(bodySize).heading_light : styles(bodySize).heading_dark,
               { fontSize: subtitleSize },
             ]}
           >
@@ -77,15 +77,15 @@ function OtherResources({ navigation }) {
           </Text>
           <SafeAreaView>
             <ScrollView
-              style={styles.scrollView}
-              contentContainerStyle={styles.scrollViewOtherResourcePageContainer}>
+              style={styles(bodySize).scrollView}
+              contentContainerStyle={styles(bodySize).scrollViewOtherResourcePageContainer}>
               {/* Description About Other Respurces*/}
 
               <Text
                 style={[
                   mode == "light"
-                    ? styles.otherResourcesBodyText_light
-                    : styles.otherResourcesBodyText_dark,
+                    ? styles(bodySize).otherResourcesBodyText_light
+                    : styles(bodySize).otherResourcesBodyText_dark,
                   { fontSize: bodySize },
                 ]}
                 accessibilityRole="text"
@@ -105,8 +105,8 @@ function OtherResources({ navigation }) {
                   <Pressable
                     style={
                       mode == "light"
-                        ? styles.itemButton_light
-                        : styles.itemButton_dark
+                        ? styles(bodySize).itemButton_light
+                        : styles(bodySize).itemButton_dark
                     }
                     onPress={() =>
                       navigation.navigate("ServiceList", {
@@ -118,8 +118,8 @@ function OtherResources({ navigation }) {
                     <Text
                       style={[
                         mode == "light"
-                          ? styles.buttonText_light
-                          : styles.buttonText_dark,
+                          ? styles(bodySize).buttonText_light
+                          : styles(bodySize).buttonText_dark,
                         { fontSize: buttonSize },
                       ]}
                     >
@@ -133,7 +133,7 @@ function OtherResources({ navigation }) {
         </View>
       </View>
 
-      <View style={styles.bottomContainer}>
+      <View style={styles(bodySize).bottomContainer}>
         <Footer navigation={navigation} />
       </View>
     </View>

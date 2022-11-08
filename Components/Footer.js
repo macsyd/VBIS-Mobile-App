@@ -28,6 +28,7 @@ function Footer({ navigation }) {
   // define a component mode state
   const [mode, setMode] = useState(theme.mode);
   const [buttonSize, setButtonSize] = useState(fontSize.buttonSize);
+  const [bodySize, setBodySize] = useState(fontSize.bodySize);
 
   // Update the app Incase the theme mode changes / font size changes
   useEffect(() => {
@@ -38,8 +39,12 @@ function Footer({ navigation }) {
     setButtonSize(fontSize.buttonSize);
   }, [fontSize]);
 
+  useEffect(() => {
+    setBodySize(fontSize.bodySize);
+  }, [fontSize]);
+
   return (
-    <View style={styles.bottomContainer}>
+    <View style={styles(bodySize).bottomContainer}>
       <View>
         <Pressable
           accessible={true}
@@ -48,8 +53,8 @@ function Footer({ navigation }) {
           accessibilityHint="Go back to previous page"
           style={
             mode == "light"
-              ? styles.bottomButton_light
-              : styles.bottomButton_dark
+              ? styles(bodySize).bottomButton_light
+              : styles(bodySize).bottomButton_dark
           }
           onPress={() => navigation.goBack()}
         >
@@ -60,7 +65,7 @@ function Footer({ navigation }) {
           />
           <Text
             style={
-              [mode == "light" ? styles.buttonText_light : styles.buttonText_dark, {fontSize: buttonSize}]
+              [mode == "light" ? styles(bodySize).buttonText_light : styles(bodySize).buttonText_dark, {fontSize: buttonSize}]
             }
           >
             Back
@@ -75,8 +80,8 @@ function Footer({ navigation }) {
           accessibilityHint="Go back to home page"
           style={
             mode == "light"
-              ? styles.bottomButton_light
-              : styles.bottomButton_dark
+              ? styles(bodySize).bottomButton_light
+              : styles(bodySize).bottomButton_dark
           }
           onPress={() => navigation.navigate("HomeScreen")}
         >
@@ -87,7 +92,7 @@ function Footer({ navigation }) {
           />
           <Text
             style={
-              [mode == "light" ? styles.buttonText_light : styles.buttonText_dark, {fontSize: buttonSize}]
+              [mode == "light" ? styles(bodySize).buttonText_light : styles(bodySize).buttonText_dark, {fontSize: buttonSize}]
             }
           >
             Home{" "}
