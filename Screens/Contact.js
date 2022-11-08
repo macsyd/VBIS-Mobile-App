@@ -113,20 +113,20 @@ function Contact({ navigation }) {
   return (
     <View
       style={
-        mode == "light" ? styles.appContainer_light : styles.appContainer_dark
+        mode == "light" ? styles(bodySize).appContainer_light : styles(bodySize).appContainer_dark
       }
     >
       {/* Top Header(VBIS logo, Settings, Tuitorial)*/}
-      <View style={styles.headerContainer}>
+      <View style={styles(bodySize).headerContainer}>
         <TopHeader navigation={navigation} />
       </View>
 
-      <View style={styles.middleContainer}>
+      <View style={styles(bodySize).middleContainer}>
         <View>
           {/* Heading */}
           <Text
             style={
-              [mode == "light" ? styles.heading_light : styles.heading_dark, {fontSize: subtitleSize}]
+              [mode == "light" ? styles(bodySize).heading_light : styles(bodySize).heading_dark, {fontSize: subtitleSize}]
           }
             accessibilityRole="header"
           >
@@ -134,11 +134,11 @@ function Contact({ navigation }) {
           </Text>
           {/* Contact Description */}
           <ScrollView
-          style={styles.contactPageScrollView}
-          contentContainerStyle={styles.contactPageScrollViewContentContainer}>
+          style={styles(bodySize).contactPageScrollView}
+          contentContainerStyle={styles(bodySize).contactPageScrollViewContentContainer}>
             <Text
               style={
-                [mode == "light" ? styles.bodyTextContact_light : styles.bodyTextContact_dark, {fontSize: bodySize}]
+                [mode == "light" ? styles(bodySize).bodyTextContact_light : styles(bodySize).bodyTextContact_dark, {fontSize: bodySize}]
               }
               accessibilityRole="text"
             >
@@ -147,7 +147,7 @@ function Contact({ navigation }) {
             </Text>
             <Text
               style={
-                [mode == "light" ? styles.bodyTextContact_light : styles.bodyTextContact_dark, {fontSize: bodySize}]
+                [mode == "light" ? styles(bodySize).bodyTextContact_light : styles(bodySize).bodyTextContact_dark, {fontSize: bodySize}]
               }
               accessibilityRole="text"
             >
@@ -156,7 +156,7 @@ function Contact({ navigation }) {
             </Text>
             <Text
               style={
-                [mode == "light" ? styles.bodyTextContact_light : styles.bodyTextContact_dark, {fontSize: bodySize}]
+                [mode == "light" ? styles(bodySize).bodyTextContact_light : styles(bodySize).bodyTextContact_dark, {fontSize: bodySize}]
               }
               accessibilityRole="text"
             >
@@ -165,7 +165,7 @@ function Contact({ navigation }) {
             </Text>
             <Text
               style={
-                [mode == "light" ? styles.bodyTextContact_light : styles.bodyTextContact_dark, {fontSize: bodySize}]
+                [mode == "light" ? styles(bodySize).bodyTextContact_light : styles(bodySize).bodyTextContact_dark, {fontSize: bodySize}]
               }
               accessibilityRole="text"
             >
@@ -181,14 +181,14 @@ function Contact({ navigation }) {
                 onPress={triggerCall}
                 style={
                   mode == "light"
-                    ? styles.callButton_light
-                    : styles.callButton_dark
+                    ? styles(bodySize).callButton_light
+                    : styles(bodySize).callButton_dark
                 }
               >
                 <Ionicons name="call" size={24} color={mode == "light" ? 'black' : 'white'} />
                 <Text
                   style={
-                    [mode == "light" ? styles.buttonText_light : styles.buttonText_dark, {fontSize: buttonSize}]
+                    [mode == "light" ? styles(bodySize).buttonText_light : styles(bodySize).buttonText_dark, {fontSize: buttonSize}]
                   }
                 >
                   Call Us
@@ -203,14 +203,14 @@ function Contact({ navigation }) {
                 onPress={handleEmail}
                 style={
                   mode == "light"
-                    ? styles.callButton_light
-                    : styles.callButton_dark
+                    ? styles(bodySize).callButton_light
+                    : styles(bodySize).callButton_dark
                 }
               >
               <MaterialIcons name="email" size={24} color={mode == "light" ? 'black' : 'white'} />
                 <Text
                   style={
-                    [mode == "light" ? styles.buttonText_light : styles.buttonText_dark, {fontSize: buttonSize}]
+                    [mode == "light" ? styles(bodySize).buttonText_light : styles(bodySize).buttonText_dark, {fontSize: buttonSize}]
                   }
                 >
                   Send Us Email
@@ -224,14 +224,14 @@ function Contact({ navigation }) {
                 onPress={mapLocation}
                 style={
                   mode == "light"
-                    ? styles.callButton_light
-                    : styles.callButton_dark
+                    ? styles(bodySize).callButton_light
+                    : styles(bodySize).callButton_dark
                 }
               >
               <MaterialCommunityIcons name="map-marker-radius-outline" size={24}color={mode == "light" ? 'black' : 'white'} />
                 <Text
                   style={
-                    [mode == "light" ? styles.buttonText_light : styles.buttonText_dark, {fontSize: buttonSize}]
+                    [mode == "light" ? styles(bodySize).buttonText_light : styles(bodySize).buttonText_dark, {fontSize: buttonSize}]
                   }
                 >
                   See Location on Map
@@ -242,9 +242,9 @@ function Contact({ navigation }) {
           </ScrollView>
         </View>
 
-        {/* <View style={styles.container}>
+        {/* <View style={styles(bodySize).container}>
           <MapView
-            style={styles.map}
+            style={styles(bodySize).map}
             initialRegion={VBISRegion} 
           >
             <Marker coordinate={VBISRegion} />
@@ -252,7 +252,7 @@ function Contact({ navigation }) {
         </View> */}
       </View>
       {/* Footer of the page(Back Button, Home Button)*/}
-      <View style={styles.bottomContainer}>
+      <View style={styles(bodySize).bottomContainer}>
         <Footer navigation={navigation} />
       </View>
     </View>

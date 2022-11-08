@@ -11,24 +11,56 @@ import {
 } from "react-native";
 import TopHeader from "../Components/TopHeader";
 import Footer from "../Components/Footer";
+import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
 import { Searchbar } from "react-native-paper";
 
 function Tutorial({ navigation }) {
+  // get the current theme & font size
+  const theme = useSelector((state) => state.theme);
+  const fontSize = useSelector((state) => state.fontSize);
+  
+  // initialize action dispatcher
+  const dispatch = useDispatch();
+
+  // define a component mode state
+  const [mode, setMode] = useState(theme.mode);
+  const [buttonSize, setButtonSize] = useState(fontSize.buttonSize);
+  const [bodySize, setBodySize] = useState(fontSize.bodySize);
+  const [subtitleSize, setSubtitleSize] = useState(fontSize.subtitleSize);
+
+  // Update the app Incase the theme mode changes / font size changes
+  useEffect(() => {
+    setMode(theme.mode);
+  }, [theme]);
+
+  useEffect(() => {
+    setButtonSize(fontSize.buttonSize);
+  }, [fontSize]);
+
+  useEffect(() => {
+    setBodySize(fontSize.bodySize);
+  }, [fontSize]);
+
+  useEffect(() => {
+    setSubtitleSize(fontSize.subtitleSize);
+  }, [fontSize]);
+
   return (
-    <View style={styles.appContainer}>
-      <View style={styles.headerContainer}>
+    <View style={styles(bodySize).appContainer}>
+      <View style={styles(bodySize).headerContainer}>
         <TopHeader navigation={navigation} />
       </View>
 
-      <View style={styles.middleContainer}>
+      <View style={styles(bodySize).middleContainer}>
         <View>
-          <Text style={styles.heading}> Tutorial </Text>
-          <Text style={styles.bodyText}></Text>
+          <Text style={styles(bodySize).heading}> Tutorial </Text>
+          <Text style={styles(bodySize).bodyText}></Text>
         </View>
       </View>
 
-      <View style={styles.bottomContainer}>
+      <View style={styles(bodySize).bottomContainer}>
         <Footer navigation={navigation} />
       </View>
     </View>

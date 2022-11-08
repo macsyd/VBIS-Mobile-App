@@ -64,17 +64,17 @@ function Course({ navigation, route }) {
   return (
     <View
       style={
-        mode == "light" ? styles.appContainer_light : styles.appContainer_dark
+        mode == "light" ? styles(bodySize).appContainer_light : styles(bodySize).appContainer_dark
       }
     >
-      <View style={styles.headerContainer}>
+      <View style={styles(bodySize).headerContainer}>
         <TopHeader navigation={navigation} />
       </View>
-      <View style={styles.middleContainer}>
+      <View style={styles(bodySize).middleContainer}>
         <View>
           <Text
             style={[
-              mode == "light" ? styles.heading_light : styles.heading_dark,
+              mode == "light" ? styles(bodySize).heading_light : styles(bodySize).heading_dark,
               { fontSize: subtitleSize },
             ]}
           >
@@ -83,13 +83,13 @@ function Course({ navigation, route }) {
           </Text>
           <SafeAreaView>
             <ScrollView
-              style={styles.scrollView}
-              contentContainerStyle={styles.scrollViewServiceList}>
+              style={styles(bodySize).scrollView}
+              contentContainerStyle={styles(bodySize).scrollViewServiceList}>
               <Text
                 style={[
                   mode == "light"
-                    ? styles.subtitle_light
-                    : styles.subtitle_dark,
+                    ? styles(bodySize).subtitle_light
+                    : styles(bodySize).subtitle_dark,
                   { fontSize: subtitleSize },
                 ]}
               >
@@ -99,8 +99,8 @@ function Course({ navigation, route }) {
               <Text
                 style={[
                   mode == "light"
-                    ? styles.bodyTextCoursePage_light
-                    : styles.bodyTextCoursePage_dark,
+                    ? styles(bodySize).bodyTextCoursePage_light
+                    : styles(bodySize).bodyTextCoursePage_dark,
                   { fontSize: bodySize },
                 ]}
               >
@@ -114,8 +114,8 @@ function Course({ navigation, route }) {
                 <Text
                   style={[
                     mode == "light"
-                      ? styles.bodyTextCoursePage_light
-                      : styles.bodyTextCoursePage_dark,
+                      ? styles(bodySize).bodyTextCoursePage_light
+                      : styles(bodySize).bodyTextCoursePage_dark,
                     { fontSize: bodySize },
                   ]}
                 >
@@ -124,8 +124,8 @@ function Course({ navigation, route }) {
                     <Text
                       style={[
                         mode == "light"
-                          ? styles.bodyTextCoursePage_light
-                          : styles.bodyTextCoursePage_dark,
+                          ? styles(bodySize).bodyTextCoursePage_light
+                          : styles(bodySize).bodyTextCoursePage_dark,
                         { fontSize: bodySize },
                       ]}
                     >
@@ -133,8 +133,8 @@ function Course({ navigation, route }) {
                         <Text
                           style={[
                             mode == "light"
-                              ? styles.bodyTextCoursePage_light
-                              : styles.bodyTextCoursePage_dark,
+                              ? styles(bodySize).bodyTextCoursePage_light
+                              : styles(bodySize).bodyTextCoursePage_dark,
                             { fontSize: bodySize },
                           ]}
                         >
@@ -145,8 +145,8 @@ function Course({ navigation, route }) {
                         <Text
                           style={[
                             mode == "light"
-                              ? styles.bodyTextCoursePage_light
-                              : styles.bodyTextCoursePage_dark,
+                              ? styles(bodySize).bodyTextCoursePage_light
+                              : styles(bodySize).bodyTextCoursePage_dark,
                             { fontSize: bodySize },
                           ]}
                         >
@@ -157,8 +157,8 @@ function Course({ navigation, route }) {
                         <Text
                           style={[
                             mode == "light"
-                              ? styles.bodyTextCoursePage_light
-                              : styles.bodyTextCoursePage_dark,
+                              ? styles(bodySize).bodyTextCoursePage_light
+                              : styles(bodySize).bodyTextCoursePage_dark,
                             { fontSize: bodySize },
                           ]}
                         >
@@ -173,8 +173,8 @@ function Course({ navigation, route }) {
                     <Text
                       style={[
                         mode == "light"
-                          ? styles.bodyTextCoursePage_light
-                          : styles.bodyTextCoursePage_dark,
+                          ? styles(bodySize).bodyTextCoursePage_light
+                          : styles(bodySize).bodyTextCoursePage_dark,
                         { fontSize: bodySize },
                       ]}
                     >
@@ -182,8 +182,8 @@ function Course({ navigation, route }) {
                         <Text
                           style={[
                             mode == "light"
-                              ? styles.bodyTextCoursePage_light
-                              : styles.bodyTextCoursePage_dark,
+                              ? styles(bodySize).bodyTextCoursePage_light
+                              : styles(bodySize).bodyTextCoursePage_dark,
                             { fontSize: bodySize },
                           ]}
                         >
@@ -193,8 +193,8 @@ function Course({ navigation, route }) {
                         <Text
                           style={[
                             mode == "light"
-                              ? styles.bodyTextCoursePage_light
-                              : styles.bodyTextCoursePage_dark,
+                              ? styles(bodySize).bodyTextCoursePage_light
+                              : styles(bodySize).bodyTextCoursePage_dark,
                             { fontSize: bodySize },
                           ]}
                         >
@@ -204,8 +204,8 @@ function Course({ navigation, route }) {
                         <Text
                           style={[
                             mode == "light"
-                              ? styles.bodyTextCoursePage_light
-                              : styles.bodyTextCoursePage_dark,
+                              ? styles(bodySize).bodyTextCoursePage_light
+                              : styles(bodySize).bodyTextCoursePage_dark,
                             { fontSize: bodySize },
                           ]}
                         >
@@ -220,8 +220,8 @@ function Course({ navigation, route }) {
                 <Text
                   style={[
                     mode == "light"
-                      ? styles.bodyTextCoursePage_light
-                      : styles.bodyTextCoursePage_dark,
+                      ? styles(bodySize).bodyTextCoursePage_light
+                      : styles(bodySize).bodyTextCoursePage_dark,
                     { fontSize: bodySize },
                   ]}
                 >
@@ -230,8 +230,8 @@ function Course({ navigation, route }) {
                     <Text
                       style={[
                         mode == "light"
-                          ? styles.bodyTextCoursePage_light
-                          : styles.bodyTextCoursePage_dark,
+                          ? styles(bodySize).bodyTextCoursePage_light
+                          : styles(bodySize).bodyTextCoursePage_dark,
                         { fontSize: bodySize },
                       ]}
                     >
@@ -239,8 +239,8 @@ function Course({ navigation, route }) {
                         <Text
                           style={[
                             mode == "light"
-                              ? styles.bodyTextCoursePage_light
-                              : styles.bodyTextCoursePage_dark,
+                              ? styles(bodySize).bodyTextCoursePage_light
+                              : styles(bodySize).bodyTextCoursePage_dark,
                             { fontSize: bodySize },
                           ]}
                         >
@@ -251,8 +251,8 @@ function Course({ navigation, route }) {
                         <Text
                           style={[
                             mode == "light"
-                              ? styles.bodyTextCoursePage_light
-                              : styles.bodyTextCoursePage_dark,
+                              ? styles(bodySize).bodyTextCoursePage_light
+                              : styles(bodySize).bodyTextCoursePage_dark,
                             { fontSize: bodySize },
                           ]}
                         >
@@ -263,8 +263,8 @@ function Course({ navigation, route }) {
                         <Text
                           style={[
                             mode == "light"
-                              ? styles.bodyTextCoursePage_light
-                              : styles.bodyTextCoursePage_dark,
+                              ? styles(bodySize).bodyTextCoursePage_light
+                              : styles(bodySize).bodyTextCoursePage_dark,
                             { fontSize: bodySize },
                           ]}
                         >
@@ -279,8 +279,8 @@ function Course({ navigation, route }) {
                     <Text
                       style={[
                         mode == "light"
-                          ? styles.bodyTextCoursePage_light
-                          : styles.bodyTextCoursePage_dark,
+                          ? styles(bodySize).bodyTextCoursePage_light
+                          : styles(bodySize).bodyTextCoursePage_dark,
                         { fontSize: bodySize },
                       ]}
                     >
@@ -288,8 +288,8 @@ function Course({ navigation, route }) {
                         <Text
                           style={[
                             mode == "light"
-                              ? styles.bodyTextCoursePage_light
-                              : styles.bodyTextCoursePage_dark,
+                              ? styles(bodySize).bodyTextCoursePage_light
+                              : styles(bodySize).bodyTextCoursePage_dark,
                             { fontSize: bodySize },
                           ]}
                         >
@@ -299,8 +299,8 @@ function Course({ navigation, route }) {
                         <Text
                           style={[
                             mode == "light"
-                              ? styles.bodyTextCoursePage_light
-                              : styles.bodyTextCoursePage_dark,
+                              ? styles(bodySize).bodyTextCoursePage_light
+                              : styles(bodySize).bodyTextCoursePage_dark,
                             { fontSize: bodySize },
                           ]}
                         >
@@ -310,8 +310,8 @@ function Course({ navigation, route }) {
                         <Text
                           style={[
                             mode == "light"
-                              ? styles.bodyTextCoursePage_light
-                              : styles.bodyTextCoursePage_dark,
+                              ? styles(bodySize).bodyTextCoursePage_light
+                              : styles(bodySize).bodyTextCoursePage_dark,
                             { fontSize: bodySize },
                           ]}
                         >
@@ -326,8 +326,8 @@ function Course({ navigation, route }) {
                 <Text
                   style={[
                     mode == "light"
-                      ? styles.bodyTextCoursePage_light
-                      : styles.bodyTextCoursePage_dark,
+                      ? styles(bodySize).bodyTextCoursePage_light
+                      : styles(bodySize).bodyTextCoursePage_dark,
                     { fontSize: bodySize },
                   ]}
                 >
@@ -336,8 +336,8 @@ function Course({ navigation, route }) {
                     <Text
                       style={[
                         mode == "light"
-                          ? styles.bodyTextCoursePage_light
-                          : styles.bodyTextCoursePage_dark,
+                          ? styles(bodySize).bodyTextCoursePage_light
+                          : styles(bodySize).bodyTextCoursePage_dark,
                         { fontSize: bodySize },
                       ]}
                     >
@@ -345,8 +345,8 @@ function Course({ navigation, route }) {
                         <Text
                           style={[
                             mode == "light"
-                              ? styles.bodyTextCoursePage_light
-                              : styles.bodyTextCoursePage_dark,
+                              ? styles(bodySize).bodyTextCoursePage_light
+                              : styles(bodySize).bodyTextCoursePage_dark,
                             { fontSize: bodySize },
                           ]}
                         >
@@ -357,8 +357,8 @@ function Course({ navigation, route }) {
                         <Text
                           style={[
                             mode == "light"
-                              ? styles.bodyTextCoursePage_light
-                              : styles.bodyTextCoursePage_dark,
+                              ? styles(bodySize).bodyTextCoursePage_light
+                              : styles(bodySize).bodyTextCoursePage_dark,
                             { fontSize: bodySize },
                           ]}
                         >
@@ -369,8 +369,8 @@ function Course({ navigation, route }) {
                         <Text
                           sstyle={[
                             mode == "light"
-                              ? styles.bodyTextCoursePage_light
-                              : styles.bodyTextCoursePage_dark,
+                              ? styles(bodySize).bodyTextCoursePage_light
+                              : styles(bodySize).bodyTextCoursePage_dark,
                             { fontSize: bodySize },
                           ]}
                         >
@@ -385,8 +385,8 @@ function Course({ navigation, route }) {
                     <Text
                       style={[
                         mode == "light"
-                          ? styles.bodyTextCoursePage_light
-                          : styles.bodyTextCoursePage_dark,
+                          ? styles(bodySize).bodyTextCoursePage_light
+                          : styles(bodySize).bodyTextCoursePage_dark,
                         { fontSize: bodySize },
                       ]}
                     >
@@ -394,8 +394,8 @@ function Course({ navigation, route }) {
                         <Text
                           style={[
                             mode == "light"
-                              ? styles.bodyTextCoursePage_light
-                              : styles.bodyTextCoursePage_dark,
+                              ? styles(bodySize).bodyTextCoursePage_light
+                              : styles(bodySize).bodyTextCoursePage_dark,
                             { fontSize: bodySize },
                           ]}
                         >
@@ -405,8 +405,8 @@ function Course({ navigation, route }) {
                         <Text
                           style={[
                             mode == "light"
-                              ? styles.bodyTextCoursePage_light
-                              : styles.bodyTextCoursePage_dark,
+                              ? styles(bodySize).bodyTextCoursePage_light
+                              : styles(bodySize).bodyTextCoursePage_dark,
                             { fontSize: bodySize },
                           ]}
                         >
@@ -416,8 +416,8 @@ function Course({ navigation, route }) {
                         <Text
                           style={[
                             mode == "light"
-                              ? styles.bodyTextCoursePage_light
-                              : styles.bodyTextCoursePage_dark,
+                              ? styles(bodySize).bodyTextCoursePage_light
+                              : styles(bodySize).bodyTextCoursePage_dark,
                             { fontSize: bodySize },
                           ]}
                         >
@@ -432,8 +432,8 @@ function Course({ navigation, route }) {
                 <Text
                   style={[
                     mode == "light"
-                      ? styles.bodyTextCoursePage_light
-                      : styles.bodyTextCoursePage_dark,
+                      ? styles(bodySize).bodyTextCoursePage_light
+                      : styles(bodySize).bodyTextCoursePage_dark,
                     { fontSize: bodySize },
                   ]}
                 >
@@ -442,8 +442,8 @@ function Course({ navigation, route }) {
                     <Text
                       style={[
                         mode == "light"
-                          ? styles.bodyTextCoursePage_light
-                          : styles.bodyTextCoursePage_dark,
+                          ? styles(bodySize).bodyTextCoursePage_light
+                          : styles(bodySize).bodyTextCoursePage_dark,
                         { fontSize: bodySize },
                       ]}
                     >
@@ -451,8 +451,8 @@ function Course({ navigation, route }) {
                         <Text
                           style={[
                             mode == "light"
-                              ? styles.bodyTextCoursePage_light
-                              : styles.bodyTextCoursePage_dark,
+                              ? styles(bodySize).bodyTextCoursePage_light
+                              : styles(bodySize).bodyTextCoursePage_dark,
                             { fontSize: bodySize },
                           ]}
                         >
@@ -463,8 +463,8 @@ function Course({ navigation, route }) {
                         <Text
                           style={[
                             mode == "light"
-                              ? styles.bodyTextCoursePage_light
-                              : styles.bodyTextCoursePage_dark,
+                              ? styles(bodySize).bodyTextCoursePage_light
+                              : styles(bodySize).bodyTextCoursePage_dark,
                             { fontSize: bodySize },
                           ]}
                         >
@@ -475,8 +475,8 @@ function Course({ navigation, route }) {
                         <Text
                           style={[
                             mode == "light"
-                              ? styles.bodyTextCoursePage_light
-                              : styles.bodyTextCoursePage_dark,
+                              ? styles(bodySize).bodyTextCoursePage_light
+                              : styles(bodySize).bodyTextCoursePage_dark,
                             { fontSize: bodySize },
                           ]}
                         >
@@ -488,13 +488,13 @@ function Course({ navigation, route }) {
                   ) : null}
                   -
                   {EndTime != null ? (
-                    <Text style={styles.bodyText}>
+                    <Text style={styles(bodySize).bodyText}>
                       {EndTime < 12 ? (
                         <Text
                           style={[
                             mode == "light"
-                              ? styles.bodyTextCoursePage_light
-                              : styles.bodyTextCoursePage_dark,
+                              ? styles(bodySize).bodyTextCoursePage_light
+                              : styles(bodySize).bodyTextCoursePage_dark,
                             { fontSize: bodySize },
                           ]}
                         >
@@ -504,8 +504,8 @@ function Course({ navigation, route }) {
                         <Text
                           style={[
                             mode == "light"
-                              ? styles.bodyTextCoursePage_light
-                              : styles.bodyTextCoursePage_dark,
+                              ? styles(bodySize).bodyTextCoursePage_light
+                              : styles(bodySize).bodyTextCoursePage_dark,
                             { fontSize: bodySize },
                           ]}
                         >
@@ -515,8 +515,8 @@ function Course({ navigation, route }) {
                         <Text
                           style={[
                             mode == "light"
-                              ? styles.bodyTextCoursePage_light
-                              : styles.bodyTextCoursePage_dark,
+                              ? styles(bodySize).bodyTextCoursePage_light
+                              : styles(bodySize).bodyTextCoursePage_dark,
                             { fontSize: bodySize },
                           ]}
                         >
@@ -531,8 +531,8 @@ function Course({ navigation, route }) {
                 <Text
                   style={[
                     mode == "light"
-                      ? styles.bodyTextCoursePage_light
-                      : styles.bodyTextCoursePage_dark,
+                      ? styles(bodySize).bodyTextCoursePage_light
+                      : styles(bodySize).bodyTextCoursePage_dark,
                     { fontSize: bodySize },
                   ]}
                 >
@@ -541,8 +541,8 @@ function Course({ navigation, route }) {
                     <Text
                       style={[
                         mode == "light"
-                          ? styles.bodyTextCoursePage_light
-                          : styles.bodyTextCoursePage_dark,
+                          ? styles(bodySize).bodyTextCoursePage_light
+                          : styles(bodySize).bodyTextCoursePage_dark,
                         { fontSize: bodySize },
                       ]}
                     >
@@ -550,8 +550,8 @@ function Course({ navigation, route }) {
                         <Text
                           style={[
                             mode == "light"
-                              ? styles.bodyTextCoursePage_light
-                              : styles.bodyTextCoursePage_dark,
+                              ? styles(bodySize).bodyTextCoursePage_light
+                              : styles(bodySize).bodyTextCoursePage_dark,
                             { fontSize: bodySize },
                           ]}
                         >
@@ -562,8 +562,8 @@ function Course({ navigation, route }) {
                         <Text
                           style={[
                             mode == "light"
-                              ? styles.bodyTextCoursePage_light
-                              : styles.bodyTextCoursePage_dark,
+                              ? styles(bodySize).bodyTextCoursePage_light
+                              : styles(bodySize).bodyTextCoursePage_dark,
                             { fontSize: bodySize },
                           ]}
                         >
@@ -574,8 +574,8 @@ function Course({ navigation, route }) {
                         <Text
                           style={[
                             mode == "light"
-                              ? styles.bodyTextCoursePage_light
-                              : styles.bodyTextCoursePage_dark,
+                              ? styles(bodySize).bodyTextCoursePage_light
+                              : styles(bodySize).bodyTextCoursePage_dark,
                             { fontSize: bodySize },
                           ]}
                         >
@@ -590,8 +590,8 @@ function Course({ navigation, route }) {
                     <Text
                       style={[
                         mode == "light"
-                          ? styles.bodyTextCoursePage_light
-                          : styles.bodyTextCoursePage_dark,
+                          ? styles(bodySize).bodyTextCoursePage_light
+                          : styles(bodySize).bodyTextCoursePage_dark,
                         { fontSize: bodySize },
                       ]}
                     >
@@ -599,8 +599,8 @@ function Course({ navigation, route }) {
                         <Text
                           style={[
                             mode == "light"
-                              ? styles.bodyTextCoursePage_light
-                              : styles.bodyTextCoursePage_dark,
+                              ? styles(bodySize).bodyTextCoursePage_light
+                              : styles(bodySize).bodyTextCoursePage_dark,
                             { fontSize: bodySize },
                           ]}
                         >
@@ -610,8 +610,8 @@ function Course({ navigation, route }) {
                         <Text
                           style={[
                             mode == "light"
-                              ? styles.bodyTextCoursePage_light
-                              : styles.bodyTextCoursePage_dark,
+                              ? styles(bodySize).bodyTextCoursePage_light
+                              : styles(bodySize).bodyTextCoursePage_dark,
                             { fontSize: bodySize },
                           ]}
                         >
@@ -621,8 +621,8 @@ function Course({ navigation, route }) {
                         <Text
                           style={[
                             mode == "light"
-                              ? styles.bodyTextCoursePage_light
-                              : styles.bodyTextCoursePage_dark,
+                              ? styles(bodySize).bodyTextCoursePage_light
+                              : styles(bodySize).bodyTextCoursePage_dark,
                             { fontSize: bodySize },
                           ]}
                         >
@@ -636,8 +636,8 @@ function Course({ navigation, route }) {
               <Text
                 style={[
                   mode == "light"
-                    ? styles.subtitle_light
-                    : styles.subtitle_dark,
+                    ? styles(bodySize).subtitle_light
+                    : styles(bodySize).subtitle_dark,
                   { fontSize: subtitleSize },
                 ]}
               >
@@ -646,8 +646,8 @@ function Course({ navigation, route }) {
               <Text
                 style={[
                   mode == "light"
-                    ? styles.bodyTextCoursePage_light
-                    : styles.bodyTextCoursePage_dark,
+                    ? styles(bodySize).bodyTextCoursePage_light
+                    : styles(bodySize).bodyTextCoursePage_dark,
                   { fontSize: bodySize },
                 ]}
               >
@@ -658,7 +658,7 @@ function Course({ navigation, route }) {
         </View>
       </View>
 
-      <View style={styles.bottomContainer}>
+      <View style={styles(bodySize).bottomContainer}>
         <Footer navigation={navigation} />
       </View>
     </View>

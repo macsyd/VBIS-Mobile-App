@@ -2,15 +2,47 @@
 import React from "react";
 import { StyleSheet, TextInput, View, Keyboard, Button } from "react-native";
 import { Feather, Entypo } from "@expo/vector-icons";
+import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+
 
 const SearchBar = ({clicked, searchPhrase, setSearchPhrase, setCLicked}) => {
+  // get the current theme & font size
+  const theme = useSelector((state) => state.theme);
+  const fontSize = useSelector((state) => state.fontSize);
+  // initialize action dispatcher
+  const dispatch = useDispatch();
+
+  // define a component mode state
+  const [mode, setMode] = useState(theme.mode);
+  const [buttonSize, setButtonSize] = useState(fontSize.buttonSize);
+  const [bodySize, setBodySize] = useState(fontSize.bodySize);
+  const [subtitleSize, setSubtitleSize] = useState(fontSize.subtitleSize);
+
+  // Update the app Incase the theme mode changes / font size changes
+  useEffect(() => {
+    setMode(theme.mode);
+  }, [theme]);
+
+  useEffect(() => {
+    setButtonSize(fontSize.buttonSize);
+  }, [fontSize]);
+
+  useEffect(() => {
+    setBodySize(fontSize.bodySize);
+  }, [fontSize]);
+
+  useEffect(() => {
+    setSubtitleSize(fontSize.subtitleSize);
+  }, [fontSize]);
+
   return (
-    <View style={styles.container}>
+    <View style={styles(bodySize).container}>
       <View
         style={
           clicked
-            ? styles.searchBar__clicked
-            : styles.searchBar__unclicked
+            ? styles(bodySize).searchBar__clicked
+            : styles(bodySize).searchBar__unclicked
         }
       >
         {/* search Icon */}
@@ -22,7 +54,7 @@ const SearchBar = ({clicked, searchPhrase, setSearchPhrase, setCLicked}) => {
         />
         {/* Input field */}
         <TextInput
-          style={styles.input}
+          style={styles(bodySize).input}
           placeholder="Search"
           value={searchPhrase}
           onChangeText={setSearchPhrase}

@@ -16,20 +16,45 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 function News({ navigation }) {
+  // get the current theme
+
+  const theme = useSelector((state) => state.theme);
+  const fontSize = useSelector((state) => state.fontSize);
+  // initialize action dispatcher
+  const dispatch = useDispatch();
+
+  // define a component mode state
+  const [mode, setMode] = useState(theme.mode);
+  const [buttonSize, setButtonSize] = useState(fontSize.buttonSize);
+  const [bodySize, setBodySize] = useState(fontSize.bodySize);
+
+  // Update the app Incase the theme mode changes
+  useEffect(() => {
+    setMode(theme.mode);
+  }, [theme]);
+
+  useEffect(() => {
+    setButtonSize(fontSize.buttonSize);
+  }, [fontSize.buttonSize]);
+
+  useEffect(() => {
+    setBodySize(fontSize.bodySize);
+  }, [fontSize]);
+  
   return (
-    <View style={styles.appContainer}>
-      <View style={styles.headerContainer}>
+    <View style={styles(bodySize).appContainer}>
+      <View style={styles(bodySize).headerContainer}>
         <TopHeader navigation={navigation} />
       </View>
 
-      <View style={styles.middleContainer}>
+      <View style={styles(bodySize).middleContainer}>
         <View>
-          <Text style={styles.heading}>News</Text>
-          <Text style={styles.bodyText}></Text>
+          <Text style={styles(bodySize).heading}>News</Text>
+          <Text style={styles(bodySize).bodyText}></Text>
         </View>
       </View>
 
-      <View style={styles.bottomContainer}>
+      <View style={styles(bodySize).bottomContainer}>
         <Footer navigation={navigation} />
       </View>
     </View>

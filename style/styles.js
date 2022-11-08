@@ -12,7 +12,7 @@ import {
 
 const { width, height } = Dimensions.get("window");
 
-export const styles = StyleSheet.create({
+export const styles  = (props) => StyleSheet.create({
   appContainer_light: {
     padding: "2%",
     backgroundColor: "#ffffff",
@@ -124,6 +124,7 @@ export const styles = StyleSheet.create({
     backgroundColor: "",
     alignItems: "center",
     justifyContent: "center",
+    marginBottom: 'auto',
   },
 
   /*Middle*/
@@ -133,7 +134,7 @@ export const styles = StyleSheet.create({
     height: height*0.7,
     justifyContent: "space-between",
    
-    marginLeft: "2%"
+    marginLeft: "2%",
   },
 
   heading_light: {
@@ -196,7 +197,7 @@ export const styles = StyleSheet.create({
     height: height*0.15,
     alignItems: "center",
     justifyContent: "center",
-   
+    marginTop: 'auto',
     
   },
   bottomButton: {
@@ -248,6 +249,14 @@ export const styles = StyleSheet.create({
   /*Page Specific*/
 
   /*Home Page*/
+  homeContainer: {
+    alignItems: "center",
+    paddingTop: 35,
+    marginLeft: 20,
+    height: "100%",
+    width: "100%",
+    padding: 20,
+  },
 
   searchBar: {
     marginRight: 42,
@@ -305,12 +314,38 @@ export const styles = StyleSheet.create({
     marginTop: 5,
   },
 
+  // homeButton_light: {
+  //   marginTop: 4,
+  //   marginRight: 2,
+  //   marginLeft: 5,
+  //   width: 140,
+  //   height: "95%",
+  //   alignItems: "center",
+  //   justifyContent: "center",
+  //   backgroundColor: "#d3d3d3",
+  //   borderWidth: 1,
+  //   borderColor: "black",
+  //   borderRadius: 7.5,
+  // },
+  // homeButton_dark: {
+  //   marginTop: 4,
+  //   marginRight: 2,
+  //   marginLeft: 5,
+  //   width: 140,
+  //   height: "95%",
+  //   alignItems: "center",
+  //   justifyContent: "center",
+  //   backgroundColor: "black",
+  //   borderWidth: 1,
+  //   borderColor: "white",
+  //   borderRadius: 7.5,
+  // },
   homeButton_light: {
-    marginTop: 4,
-    marginRight: 2,
+    marginTop: 20,
+    marginRight: 25,
     marginLeft: 5,
-    width: 140,
-    height: "95%",
+    width: 340,
+    height: "16%",
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#d3d3d3",
@@ -319,16 +354,16 @@ export const styles = StyleSheet.create({
     borderRadius: 7.5,
   },
   homeButton_dark: {
-    marginTop: 4,
-    marginRight: 2,
+    marginTop: 20,
+    marginRight: 25,
     marginLeft: 5,
-    width: 140,
-    height: "95%",
+    width: 340,
+    height: "16%",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "black",
+    backgroundColor: "#d3d3d3",
     borderWidth: 1,
-    borderColor: "white",
+    borderColor: "black",
     borderRadius: 7.5,
   },
   contactButton_light: {
@@ -631,13 +666,12 @@ export const styles = StyleSheet.create({
  
   /* Scoll View */
   scrollView: {
-    height: height * 0.55,
+    height: props.bodySize < 20 ? height*0.4 : height*0.5,
     width: '100%',
     alignSelf: 'center',
   },
   scrollViewContentContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    paddingBottom: 50,
   },
 });

@@ -51,20 +51,20 @@ function Staff({ navigation }) {
   return (
     <View
       style={
-        mode == "light" ? styles.appContainer_light : styles.appContainer_dark
+        mode == "light" ? styles(bodySize).appContainer_light : styles(bodySize).appContainer_dark
       }
     >
       {/* Top Header(VBIS logo, Settings, Tuitorial)*/}
-      <View style={styles.headerContainer}>
+      <View style={styles(bodySize).headerContainer}>
         <TopHeader navigation={navigation} />
       </View>
 
-      <View style={styles.middleContainer}>
+      <View style={styles(bodySize).middleContainer}>
         <View>
           {/* Heading */}
           <Text
             style={
-              [mode == "light" ? styles.heading_light : styles.heading_dark, {fontSize: subtitleSize}]
+              [mode == "light" ? styles(bodySize).heading_light : styles(bodySize).heading_dark, {fontSize: subtitleSize}]
             }
             accessibilityRole="header"
           >
@@ -74,7 +74,7 @@ function Staff({ navigation }) {
           {staffList.map((item) => (
             <Text
               style={
-                [mode == "light" ? styles.bodyTextStaff_light : styles.bodyTextStaff_dark, {fontSize: bodySize}]
+                [mode == "light" ? styles(bodySize).bodyTextStaff_light : styles(bodySize).bodyTextStaff_dark, {fontSize: bodySize}]
               }
               key={item[0]}
               accessible={true}
@@ -87,7 +87,7 @@ function Staff({ navigation }) {
         </View>
       </View>
 
-      <View style={styles.bottomContainer}>
+      <View style={styles(bodySize).bottomContainer}>
         <Footer navigation={navigation} />
       </View>
     </View>
